@@ -4,7 +4,12 @@ class UsersController < ApplicationController
     @post_images = @user.post_images.page(params[:page]).reverse_order
   end
 
-
+ def new
+  @user = List.new
+  # book.save
+ end
+ 
+ 
 
    def edit
     @user = User.find(params[:id])
@@ -16,7 +21,11 @@ class UsersController < ApplicationController
     redirect_to user_path(@user.id)
   end
 
-  
+  def destroy
+    @post_image = PostImage.find(params[:id])
+    @post_image.destroy
+    redirect_to post_images_path
+  end
   
     private
 

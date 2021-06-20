@@ -4,8 +4,8 @@ def top
 end
 
 def index
-@home = "top"
-@home = "Bookers"
-@home = "Home"
+ @home = "top"
+ @home = "Bookers"
+ @home = "Home"
 end
 end

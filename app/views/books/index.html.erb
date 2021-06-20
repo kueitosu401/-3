@@ -1,0 +1,4 @@
+<% @post_images.each do |post_image| %>
+  <%= link_to "show", book_path(post_image.id) %>
+<p><%= post_image.title %></p>
+<% end %>
