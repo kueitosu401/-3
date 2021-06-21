@@ -1,21 +1,21 @@
 class BooksController < ApplicationController
   def new
-    @post_image = Book.new
+    @books = Book.new
   end
 
   def create
-    @post_image = Book.new(book_params)
-    @post_image.user_id = current_user.id
-    @post_image.save
-    redirect_to book_path(@post_image)
+    @books = Book.new(book_params)
+    @books.user_id = current_user.id
+    @books.save
+    redirect_to book_path(@books)
   end
 
   def index
-    @post_images = Book.all
+    @books = Book.all
   end
 
   def show
-    @post_image =  Book.find(params[:id])
+    @books =  Book.find(params[:id])
   end
 
 

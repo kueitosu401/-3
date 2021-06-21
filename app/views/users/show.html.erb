@@ -1,10 +1,10 @@
 <div class="profile-container">
   <h3 class="profile-name"><%= @user.name %></h3>
 
-  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>-->
+ 
 
 <h1>New book</h1>
-<%= form_with model: @post_image, local:true do |f| %>
+<%= form_with model: @book, local:true do |f| %>
 
   <h4>Title</h4>
   <%= f.text_field :title %>
@@ -18,7 +18,7 @@
     <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
     <% end %>
 
-<% @post_images.each do |post_image| %>
+<% @book.each do |post_image| %>
 <div>
   <%= link_to post_image_path(post_image.id) do %>
     <%= attachment_image_tag post_image, :image %>

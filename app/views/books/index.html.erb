@@ -1,4 +1,5 @@
-<% @post_images.each do |post_image| %>
-  <%= link_to "show", book_path(post_image.id) %>
-<p><%= post_image.title %></p>
+<%= form_with model: @book, local:true do |f| %>
+
+  <%= link_to "show", book_path(@book) %>
+<p><%= book.title %></p>
 <% end %>
