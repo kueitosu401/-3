@@ -1,5 +1,8 @@
-<%= form_with model: @book, local:true do |f| %>
+<h1>Books</h1>
+<% @books.each do |post| %>
+  <p>Title</p>
+  <span><%= post.title %></span>
+  <p>Opinion</p>
+  <span><%= post.body %></span>
 
-  <%= link_to "show", book_path(@book) %>
-<p><%= book.title %></p>
-<% end %>
+<td><%= link_to "削除", books_path(@books), method: :destroy %></td>
